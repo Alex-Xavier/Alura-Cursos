@@ -1,5 +1,7 @@
 import React from 'react'
-import { StatusBar, View, Text } from 'react-native'
+import { StatusBar, View, Text, FlatList } from 'react-native'
+
+import { Item } from '../components'
 
 const servicos = [
 	{
@@ -26,7 +28,13 @@ const ServicesScreen = () => {
 	return (
 		<View>
 			<StatusBar />
+
 			<Text>Tela de Serviços!</Text>
+
+			<FlatList 
+				data={servicos}
+				renderItem={({ item }) => <Item {...item} />}
+				keyExtractor={({ id }) => String(id)} />
 		</View>
 	)
 }
