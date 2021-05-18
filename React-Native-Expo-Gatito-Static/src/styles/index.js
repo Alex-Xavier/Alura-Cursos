@@ -1,4 +1,4 @@
-export { default as buttonStyle } from './button'
+export { default as functionButtonStyle } from './button'
 export { default as fieldStyle } from './field'
 export { default as globalStyle } from './global'
 export { default as itemStyle } from './item'
