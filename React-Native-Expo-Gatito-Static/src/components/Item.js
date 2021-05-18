@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text } from 'react-native'
+
+import IntegerField from './IntegerField'
+import Button from './Button'
 
 import { itemStyle } from '../styles'
-import IntegerField from './IntegerField'
 
 const Item = ({ name, price, description }) => {
 	const [ quantity, setQuantity ] = useState(1)
@@ -28,7 +30,7 @@ const Item = ({ name, price, description }) => {
 					</View>
 				</View>
 
-				<Button title='Adicionar' />
+				<Button value='Adicionar' action={() => {}} />
 			</View>
 
 			<View style={itemStyle.divisor} />
