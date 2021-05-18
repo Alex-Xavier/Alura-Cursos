@@ -14,7 +14,11 @@ const Item = ({ name, price, description }) => {
 			<View style={itemStyle.information}>
 				<Text style={itemStyle.name}>{ name }</Text>
 				<Text style={itemStyle.description}>{ description }</Text>
-				<Text style={itemStyle.price}>{ price }</Text>
+				<Text style={itemStyle.price}>{
+					Intl.NumberFormat('pt-BR', {
+						style: 'currency', currency: 'BRL'
+					}).format(price)
+				}</Text>
 			</View>
 
 			<View style={itemStyle.shoppingCart}>
