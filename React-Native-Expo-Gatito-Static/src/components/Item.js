@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, Button } from 'react-native'
 
 import { itemStyle } from '../styles'
-import CampoInteiro from './CampoInteiro'
+import IntegerField from './IntegerField'
 
 const Item = ({ name, price, description }) => {
 	const [ quantity, setQuantity ] = useState(1)
@@ -19,7 +19,7 @@ const Item = ({ name, price, description }) => {
 				<View>
 					<View style={itemStyle.value}>
 						<Text style={itemStyle.description}>Quantidade:</Text>
-						<CampoInteiro value={quantity} style={itemStyle.quantity} action={setQuantity} />
+						<IntegerField value={quantity} style={itemStyle.quantity} action={setQuantity} />
 					</View>
 
 					<View style={itemStyle.value}>

@@ -1,9 +1,9 @@
 import React from 'react'
 import { TextInput } from 'react-native'
 
-import { fieldStyle as standardStyle } from '../styles/'
+import { fieldStyle as standardStyle } from '../styles'
 
-const CampoInteiro = ({ value, style, action }) => {
+const IntegerField = ({ value, style, action }) => {
   const update = ( newValue, callback ) => {
     const verifyInteger = newValue.match(/^[0-9]*$/)
     if (!verifyInteger) return
@@ -25,4 +25,4 @@ const CampoInteiro = ({ value, style, action }) => {
   )
 }
 
-export default CampoInteiro
+export default IntegerField

@@ -1,2 +1,2 @@
 export { default as Item } from './Item'
-export { default as CampoInteiro } from './CampoInteiro'
+export { default as IntegerField } from './IntegerField'
