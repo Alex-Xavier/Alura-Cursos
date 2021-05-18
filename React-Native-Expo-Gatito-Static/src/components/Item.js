@@ -19,7 +19,7 @@ const Item = ({ name, price, description }) => {
 				<View>
 					<View style={itemStyle.value}>
 						<Text style={itemStyle.description}>Quantidade:</Text>
-						<CampoInteiro value={quantity} action={setQuantity} />
+						<CampoInteiro value={quantity} style={itemStyle.quantity} action={setQuantity} />
 					</View>
 
 					<View style={itemStyle.value}>
