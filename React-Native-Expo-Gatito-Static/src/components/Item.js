@@ -8,6 +8,16 @@ import { itemStyle } from '../styles'
 
 const Item = ({ name, price, description }) => {
 	const [ quantity, setQuantity ] = useState(1)
+	const [ total, setTotal ] = useState(price)
+
+	const updateQuantityTotal = newQuantity => {
+		setQuantity(newQuantity)
+		computeTotal(newQuantity)
+	}
+
+	const computeTotal = quantity => {
+		setTotal(quantity * price)
+	}
 
 	return (
 		<View>
@@ -25,12 +35,16 @@ const Item = ({ name, price, description }) => {
 				<View>
 					<View style={itemStyle.value}>
 						<Text style={itemStyle.description}>Quantidade:</Text>
-						<IntegerField value={quantity} style={itemStyle.quantity} action={setQuantity} />
+						<IntegerField value={quantity} style={itemStyle.quantity} action={updateQuantityTotal} />
 					</View>
 
 					<View style={itemStyle.value}>
-						<Text style={itemStyle.description}>Preço:</Text>
-						<Text style={itemStyle.price}>0</Text>
+						<Text style={itemStyle.description}>Total:</Text>
+						<Text style={itemStyle.price}>{
+							Intl.NumberFormat('pt-BR', {
+								style: 'currency', currency: 'BRL'
+							}).format(total)
+						}</Text>
 					</View>
 				</View>
 
