@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatusBar, View, Text, FlatList } from 'react-native'
+import { StatusBar, View, FlatList } from 'react-native'
 
 import { Item } from '../components'
 
@@ -28,8 +28,6 @@ const ServicesScreen = () => {
 	return (
 		<View>
 			<StatusBar />
-
-			<Text>Tela de Serviços!</Text>
 
 			<FlatList 
 				data={servicos}
