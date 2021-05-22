@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatusBar, View, FlatList } from 'react-native'
+import { StatusBar, View, FlatList, KeyboardAvoidingView, Platform } from 'react-native'
 
 import { Item } from '../components'
 
@@ -31,10 +31,14 @@ const ServicesScreen = () => {
 		<View style={globalStyle.fill}>
 			<StatusBar />
 
-			<FlatList 
-				data={servicos}
-				renderItem={({ item }) => <Item {...item} />}
-				keyExtractor={({ id }) => String(id)} />
+			<KeyboardAvoidingView
+				behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+				style={globalStyle.fill}>
+				<FlatList 
+					data={servicos}
+					renderItem={({ item }) => <Item {...item} />}
+					keyExtractor={({ id }) => String(id)} />
+			</KeyboardAvoidingView>
 		</View>
 	)
 }
