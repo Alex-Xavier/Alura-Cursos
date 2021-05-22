@@ -54,7 +54,7 @@ const Item = ({ name, price, description }) => {
 						</View>
 					</View>
 
-					<Button value='Adicionar' action={() => {}} />
+					<Button value='Adicionar ao Carrinho' action={() => {}} />
 				</View>
 			}
 
