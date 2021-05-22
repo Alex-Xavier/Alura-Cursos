@@ -3,6 +3,8 @@ import { StatusBar, View, FlatList } from 'react-native'
 
 import { Item } from '../components'
 
+import { globalStyle } from '../styles'
+
 const servicos = [
 	{
 		id: 1,
@@ -26,7 +28,7 @@ const servicos = [
 
 const ServicesScreen = () => {
 	return (
-		<View>
+		<View style={globalStyle.fill}>
 			<StatusBar />
 
 			<FlatList 
