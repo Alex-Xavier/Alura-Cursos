@@ -1,7 +1,7 @@
 import React from 'react'
 import { StatusBar, View, FlatList, KeyboardAvoidingView, Platform } from 'react-native'
 
-import { Item } from '../components'
+import { ServicesItem } from '../components'
 
 import { globalStyle } from '../styles'
 
@@ -36,7 +36,7 @@ const ServicesScreen = () => {
 				style={globalStyle.fill}>
 				<FlatList 
 					data={servicos}
-					renderItem={({ item }) => <Item {...item} />}
+					renderItem={({ item }) => <ServicesItem {...item} />}
 					keyExtractor={({ id }) => String(id)} />
 			</KeyboardAvoidingView>
 		</View>
