@@ -1,9 +1,7 @@
 import React from 'react'
-import { StatusBar, View, FlatList, KeyboardAvoidingView, Platform } from 'react-native'
+import { FlatList } from 'react-native'
 
-import { ShoppingCartItem } from '../components'
-
-import { globalStyle } from '../styles'
+import { ListItems, ShoppingCartItem } from '../components'
 
 const servicos = [
 	{
@@ -31,18 +29,12 @@ const servicos = [
 
 const ShoppingCartScreen = () => {
 	return (
-		<View style={globalStyle.fill}>
-			<StatusBar />
-
-			<KeyboardAvoidingView
-				behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
-				style={globalStyle.fill}>
-				<FlatList 
-					data={servicos}
-					renderItem={({ item }) => <ShoppingCartItem {...item} />}
-					keyExtractor={({ id }) => String(id)} />
-			</KeyboardAvoidingView>
-		</View>
+		<ListItems>
+			<FlatList 
+				data={servicos}
+				renderItem={({ item }) => <ShoppingCartItem {...item} />}
+				keyExtractor={({ id }) => String(id)} />
+		</ListItems>
 	)
 }
 
