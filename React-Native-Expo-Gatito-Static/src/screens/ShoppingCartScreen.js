@@ -1,7 +1,7 @@
 import React from 'react'
 import { StatusBar, View, FlatList, KeyboardAvoidingView, Platform } from 'react-native'
 
-import { Item } from '../components'
+import { ShoppingCartItem } from '../components'
 
 import { globalStyle } from '../styles'
 
@@ -39,7 +39,7 @@ const ShoppingCartScreen = () => {
 				style={globalStyle.fill}>
 				<FlatList 
 					data={servicos}
-					renderItem={({ item }) => <Item {...item} />}
+					renderItem={({ item }) => <ShoppingCartItem {...item} />}
 					keyExtractor={({ id }) => String(id)} />
 			</KeyboardAvoidingView>
 		</View>
