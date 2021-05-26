@@ -3,7 +3,7 @@ import { FlatList } from 'react-native'
 
 import { ListItems, ShoppingCartItem, ShoppingCartStatus } from '../components'
 
-const servicos = [
+const services = [
 	{
 		id: 1,
 		name: 'Banho',
@@ -28,12 +28,14 @@ const servicos = [
 ]
 
 const ShoppingCartScreen = () => {
+	const total = services.reduce((sum, {price, quantity}) => sum + (price * quantity), 0)
+	
 	return (
 		<ListItems>
-			<ShoppingCartStatus total={0} />
+			<ShoppingCartStatus total={total} />
 
 			<FlatList 
-				data={servicos}
+				data={services}
 				renderItem={({ item }) => <ShoppingCartItem {...item} />}
 				keyExtractor={({ id }) => String(id)} />
 		</ListItems>
