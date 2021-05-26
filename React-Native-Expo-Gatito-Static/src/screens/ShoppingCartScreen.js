@@ -1,7 +1,7 @@
 import React from 'react'
 import { FlatList } from 'react-native'
 
-import { ListItems, ShoppingCartItem } from '../components'
+import { ListItems, ShoppingCartItem, ShoppingCartStatus } from '../components'
 
 const servicos = [
 	{
@@ -30,6 +30,8 @@ const servicos = [
 const ShoppingCartScreen = () => {
 	return (
 		<ListItems>
+			<ShoppingCartStatus total={0} />
+
 			<FlatList 
 				data={servicos}
 				renderItem={({ item }) => <ShoppingCartItem {...item} />}
