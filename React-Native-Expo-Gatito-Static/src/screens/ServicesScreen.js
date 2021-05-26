@@ -1,7 +1,7 @@
 import React from 'react'
 import { FlatList } from 'react-native'
 
-import { ListItems, ServicesItem } from '../components'
+import { StandardContainer, ServicesItem } from '../components'
 
 const servicos = [
 	{
@@ -26,12 +26,12 @@ const servicos = [
 
 const ServicesScreen = () => {
 	return (
-		<ListItems>
+		<StandardContainer>
 			<FlatList 
 				data={servicos}
 				renderItem={({ item }) => <ServicesItem {...item} />}
 				keyExtractor={({ id }) => String(id)} />
-		</ListItems>
+		</StandardContainer>
 	)
 }
 

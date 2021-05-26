@@ -3,7 +3,7 @@ import { SafeAreaView, StatusBar, KeyboardAvoidingView, Platform } from 'react-n
 
 import { globalStyle } from '../styles'
 
-const ListItems = ({ children }) => {
+const StandardContainer = ({ children }) => {
   return (
     <SafeAreaView style={globalStyle.fill}>
       <StatusBar />
@@ -17,4 +17,4 @@ const ListItems = ({ children }) => {
   )
 }
 
-export default ListItems
+export default StandardContainer
