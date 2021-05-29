@@ -3,10 +3,10 @@ import React from 'react'
 import 'intl'
 import 'intl/locale-data/jsonp/pt-BR'
 
-import { ServicesScreen, ShoppingCartScreen } from './src/screens'
+import Routes from './src/routes/Routes'
 
  const App = () => {
-  return <ShoppingCartScreen />
+  return <Routes />
 }
 
 export default App
