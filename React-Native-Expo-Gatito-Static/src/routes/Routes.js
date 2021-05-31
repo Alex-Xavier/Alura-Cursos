@@ -30,7 +30,8 @@ const Routes = () => {
             marginTop: 3,
             paddingTop: 21,
             backgroundColor: colors.orange
-          }
+          },
+          keyboardHidesTabBar: true
         }}>
         <Tab.Screen name='Serviços' component={ServicesScreen} />
         <Tab.Screen name='Carrinho' component={ShoppingCartScreen} />
