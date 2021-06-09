@@ -28,10 +28,10 @@ const Header = () => {
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
-    height: 120,
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 24
+    paddingVertical: 50,
+    paddingHorizontal: 10
   },
   title: {
     fontSize: 28,
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     width: 30
   },
   descriptionContainer: {
-    paddingHorizontal: 24
+    paddingHorizontal: 10
   },
   spacer: {
     borderWidth: 0.5,
