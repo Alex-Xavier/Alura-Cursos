@@ -2,14 +2,17 @@ import React from 'react'
 import { TouchableOpacity, Image, Text, StyleSheet } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-const Item = ({ title, image }) => {
+const Item = ({ title, image, studio, description, name, price, id }) => {
   const navigation = useNavigation()
 
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => navigation.push('Detalhes do Produto')} >
+      onPress={() => navigation.push('Detalhes do Produto', {
+        title, image, studio, description, name, price, id
+      })} >
       <Image source={image} style={styles.image} />
+
       <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>
   )

@@ -1,14 +1,20 @@
 import React from 'react'
-import { Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
-const ProductDetails = () => {
+const ProductDetails = ({ route }) => {
+  const { title, image, studio, description, name, price, id } = route.params
+
   return (
-    <Text>Tela de Detalhes do Produto</Text>
+    <View style={styles.container}>
+      <Text>{ title }</Text>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
-  
+  container: {
+    flex: 1
+  }
 })
 
 export default ProductDetails
