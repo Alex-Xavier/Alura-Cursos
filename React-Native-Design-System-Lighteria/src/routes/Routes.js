@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import ProductList from '../screens/ProductList'
+import ProductDetails from '../screens/ProductDetails'
 
 const Stack = createStackNavigator()
 
@@ -13,6 +14,12 @@ const Routes = () => {
         <Stack.Screen
           name='Lista de Produtos'
           component={ProductList}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name='Detalhes do Produto'
+          component={ProductDetails}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
