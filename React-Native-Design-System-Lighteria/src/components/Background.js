@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, ImageBackground, Image, StyleSheet, Dimensions } from 'react-native'
+import { View, ImageBackground, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import ShoppingBag from './ShoppingBag'
@@ -16,10 +16,13 @@ const Background = () => {
         style={styles.imageBackground}
       >
         <View style={styles.headerContainer}>
-          <Image
-            source={require('../../assets/images/flecha-esquerda.png')}
-            style={styles.imageArrow}
-          />
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Image
+              source={require('../../assets/images/flecha-esquerda.png')}
+              style={styles.imageArrow}
+            />
+          </TouchableOpacity>
+
           <View style={styles.shoopingBagContainer}>
             <ShoppingBag />
           </View>
