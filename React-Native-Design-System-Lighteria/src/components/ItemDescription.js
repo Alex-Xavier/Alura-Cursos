@@ -1,9 +1,14 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
 
+import { useNavigation } from '@react-navigation/native'
+
+import currencyFormat from '../utils/utils'
+
 import Button from './Button'
 
 const ItemDescription = ({ title, image, studio, description, name, price, id }) => {
+  const navigation = useNavigation()
   return (
     <View style={styles.itemContainer}>
       <View style={styles.itemPosition}>
@@ -24,11 +29,12 @@ const ItemDescription = ({ title, image, studio, description, name, price, id })
           <Text style={styles.textDescription}>{ description }</Text>
 
           <View style={styles.footer}>
-            <Text style={styles.price}>{ price }</Text>
+            <Text style={styles.price}>{ currencyFormat(price) }</Text>
 
             <Button
               title={'COMPRAR'}
-              width={'100%'}
+              width={'90%'}
+              onPress={() => navigation.push('Checkout')}
             />
           </View>
         </View>
