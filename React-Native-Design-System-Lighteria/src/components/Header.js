@@ -1,5 +1,7 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
+
+import ShoppingBag from './ShoppingBag'
 
 const Header = () => {
   return (
@@ -7,11 +9,7 @@ const Header = () => {
       <View style={styles.titleContainer}>
         <Text style={styles.title}>LIGHTERIA</Text>
 
-        <View style={styles.shoppingBagContainer}>
-          <Image
-            source={require('../../assets/images/icone-sacola.png')}
-            style={styles.shoppingBag} />
-        </View>
+        <ShoppingBag />
       </View>
 
       <View style={styles.descriptionContainer}>
@@ -36,15 +34,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold'
-  },
-  shoppingBagContainer: {
-    backgroundColor: '#FFF',
-    padding: 18,
-    borderRadius: 30
-  },
-  shoppingBag: {
-    height: 30,
-    width: 30
   },
   descriptionContainer: {
     paddingHorizontal: 10
