@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const DataContext = React.createContext()
+export const DataContext = React.createContext()
 
 const Provider = ({ children }) => {
   const [ checkoutItems, setCheckoutItems ] = useState([])
@@ -14,7 +14,7 @@ const Provider = ({ children }) => {
         )
 
         if (filteredItem)
-          filteredItem.quantity =+ 1
+          filteredItem.quantity = filteredItem.quantity + 1
         else {
           newItem.quantity = 1
           copyCheckoutItems = [...copyCheckoutItems, newItem]

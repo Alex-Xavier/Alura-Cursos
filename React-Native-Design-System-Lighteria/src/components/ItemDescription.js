@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
+
+import { DataContext } from '../provider/provider'
 
 import { useNavigation } from '@react-navigation/native'
 
@@ -8,7 +10,9 @@ import currencyFormat from '../utils/utils'
 import Button from './Button'
 
 const ItemDescription = ({ title, image, studio, description, name, price, id }) => {
+  const { addItem } = useContext(DataContext)
   const navigation = useNavigation()
+
   return (
     <View style={styles.itemContainer}>
       <View style={styles.itemPosition}>
@@ -34,7 +38,17 @@ const ItemDescription = ({ title, image, studio, description, name, price, id })
             <Button
               title={'COMPRAR'}
               width={'90%'}
-              onPress={() => navigation.push('Checkout')}
+              onPress={() => {
+                addItem({
+                  studio,
+                  name,
+                  title,
+                  id,
+                  image,
+                  price,
+                })
+                navigation.push('Checkout')
+              }}
             />
           </View>
         </View>
